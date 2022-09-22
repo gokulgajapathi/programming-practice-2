@@ -1,49 +1,46 @@
-package com.gokul;
 import java.util.Scanner;
-
-// GeekForGeek Question Link: https://practice.geeksforgeeks.org/problems/find-transition-point-1587115620/0
-
-class Transition_point {
+class Transition_point{
     public static void main(String[] args) {
+        int n = 5;
+        int arr[] = {0,0,0,1,1};
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter no of elements:");
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            System.out.print("Enter " + i + "th position element:");
-            arr[i] = sc.nextInt();
-
-        }
-        System.out.println(transitionPoint(arr,n));
+        Transition_point obj = new Transition_point();
+        obj.transitionPoint();
     }
-
-    public static int transitionPoint(int[] arr, int n) {
-        if (arr[n - 1] == 0) {
-            return  -1;
-        }
-        if(arr[0] == 1){
-            return 0;
-        }
+    int transitionPoint(int arr[], int n){
+        arr[]= Transition_point.main(arr[]);
+        n= Transition_point.main(n);
         int start = 0;
         int end = n-1;
 
+            //if only 1 element and it is equal to 0
+            if(n==1 && arr[0]==0)
+                return -1;
 
-        while(start <= end){
-            int mid = start + (end - start)/2;
-            if(arr[mid] == 1 && arr[mid-1] == 0){
-                return  mid;
+        int transitionFinder = 0;
+        //this loop helps to find transition point, which having more than 1 element
+        while (start <= end){
+            int mid = start + end /2;
+
+            //return mid as a transition point
+            if(arr[mid]==1 && arr[mid-1]==0){
+                return mid;
             }
-            else if(arr[mid] == 0){
+            //search left elements
+            else if (arr[mid]==1){
+                transitionFinder=1;
+                end = mid-1;
+            }
+            //search right elements
+            else{
                 start = mid+1;
             }
-            else if (arr[mid] == 1){
-                start = mid-1;
-            }
+
         }
 
-        return 0;
+        //if there is no element which value is 1
+        if(transitionFinder==0)
+            return -1;
+
     }
-
-
 }
