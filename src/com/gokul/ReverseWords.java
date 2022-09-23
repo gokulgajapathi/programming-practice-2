@@ -1,13 +1,14 @@
 package com.gokul;
 
 
+
 public class ReverseWords
 {
 
     public static void main(String[] args)
     {
-        String s[] = "i like this program very much".
-                split(" ");
+        String s[] = "i.like.this.program.very.much".
+                split("\\.");
         String ans = "";
         for (int i = s.length - 1; i >= 0; i--)
         {
@@ -18,4 +19,3 @@ public class ReverseWords
                 ans.length() - 1));
     }
 }
-
