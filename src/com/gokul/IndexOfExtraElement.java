@@ -5,8 +5,21 @@ package com.gokul;
 
 public class IndexOfExtraElement {
     public static void main(String[] args) {
-        int arr1[] = {2, 3, 4, 6, 8,  12, 13};
-        int arr2[] = {2, 4, 6, 8, 10, 12};
+    	/*//Test case-1
+		Input:
+		N = 7
+		A[] = {2,4,6,8,9,10,12}
+		B[] = {2,4,6,8,10,12}
+		Output: 4*/
+
+/*		//Test case-2
+		Input:
+		N = 6
+		A[] = {3,5,7,9,11,13}
+		B[] = {3,5,7,11,13}*/
+
+        int[] arr1 = {2, 3, 4, 6, 8,  12, 13};
+        int[] arr2 = {2, 4, 6, 8, 10, 12};
         int n = arr2.length;
 
 
@@ -14,7 +27,7 @@ public class IndexOfExtraElement {
     }
 
 
-	static int findExtra(int arr1[], int arr2[], int n)
+	static int findExtra(int[] arr1, int[] arr2, int n)
 	{
 
 		int index = n;

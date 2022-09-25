@@ -1,32 +1,46 @@
 package com.gokul;
-import java.util.Scanner;
 
-// GeekForGeek Question Link: https://practice.geeksforgeeks.org/problems/find-transition-point-1587115620/0
+// GeeksForGeeks Question Link: https://practice.geeksforgeeks.org/problems/find-transition-point-1587115620/0
+
+
+
 
 class Transition_point {
     public static void main(String[] args) {
+        //Test case-1
+/*//Input:
+        int N = 5;
+        int[] arr = {0,0,0,1,1};
+        //Output: 3*/
 
-        Scanner sc = new Scanner(System.in);
+
+//Test case-2
+//Input:
+        int N = 4;
+        int[] arr = {0,0,0,0};
+        //Output: -1
+
+     /*   Scanner sc = new Scanner(System.in);
         System.out.println("Enter no of elements:");
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        for (int i = 0; i < N; i++) {
             System.out.print("Enter " + i + "th position element:");
             arr[i] = sc.nextInt();
 
-            }
-        System.out.println(transitionPoint(arr,n));
+            }*/
+        System.out.println(transitionPoint(arr,N));
     }
 
-     public static int transitionPoint(int[] arr, int n) {
-        if (arr[n - 1] == 0) {
+     public static int transitionPoint(int[] arr, int N) {
+        if (arr[N - 1] == 0) {
             return  -1;
         }
         if(arr[0] == 1){
             return 0;
         }
         int start = 0;
-        int end = n-1;
+        int end = N-1;
 
 
         while(start <= end){
