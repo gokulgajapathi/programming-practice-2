@@ -1,46 +1,53 @@
+package com.gokul;
+
 import java.util.Scanner;
-class Transition_point{
+
+public class BitonicPoint {
     public static void main(String[] args) {
-        int n = 5;
-        int arr[] = {0,0,0,1,1};
 
-        Transition_point obj = new Transition_point();
-        obj.transitionPoint();
-    }
-    int transitionPoint(int arr[], int n){
-        arr[]= Transition_point.main(arr[]);
-        n= Transition_point.main(n);
-        int start = 0;
-        int end = n-1;
+        //input for array
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements you want to store:");
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        for (int i = 0; i < N; i++) {
 
-            //if only 1 element and it is equal to 0
-            if(n==1 && arr[0]==0)
-                return -1;
+            System.out.print("Enter the elements:");
+            arr[i] = sc.nextInt();
 
-        int transitionFinder = 0;
-        //this loop helps to find transition point, which having more than 1 element
-        while (start <= end){
-            int mid = start + end /2;
+        /* Test case-1
+        int N = 5;
+        int[] arr = {1, 45, 47, 50, 5};
 
-            //return mid as a transition point
-            if(arr[mid]==1 && arr[mid-1]==0){
-                return mid;
+        Test case-2
+        int N = 9;
+        int[] arr = {1, 15, 25, 45, 42, 21, 17, 12, 11};*/
+
+            int start = 0;
+            int end = arr.length;
+
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+
+                //return bitonic point
+                if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1]) {
+                    System.out.println("Bitonic point is " + arr[mid]);
+                    break;
+                }
+
+                //right element of mid is greater than mid
+                if (arr[mid] < arr[mid + 1])
+                    end = end + 1;
+
+
+                    //left element of mid is greater than mid
+                else
+                    end = end - 1;
+
+
             }
-            //search left elements
-            else if (arr[mid]==1){
-                transitionFinder=1;
-                end = mid-1;
-            }
-            //search right elements
-            else{
-                start = mid+1;
-            }
+
 
         }
-
-        //if there is no element which value is 1
-        if(transitionFinder==0)
-            return -1;
-
     }
 }
