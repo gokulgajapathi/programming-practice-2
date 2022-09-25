@@ -1,6 +1,9 @@
 package com.gokul;
 
-
+//GFG Link: https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1
+/*Test-case
+S = i.like.this.program.very.much
+        Output: much.very.program.this.like.i*/
 
 public class ReverseWords
 {

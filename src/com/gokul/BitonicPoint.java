@@ -1,11 +1,9 @@
 package com.gokul;
 
-import java.util.Scanner;
-
 public class BitonicPoint {
     public static void main(String[] args) {
 
-        //input for array
+        /*//input for array
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of elements you want to store:");
         int N = sc.nextInt();
@@ -14,12 +12,13 @@ public class BitonicPoint {
 
             System.out.print("Enter the elements:");
             arr[i] = sc.nextInt();
+            }*/
 
-        /* Test case-1
+         //Test case-1
         int N = 5;
         int[] arr = {1, 45, 47, 50, 5};
 
-        Test case-2
+        /* //Test case-2
         int N = 9;
         int[] arr = {1, 15, 25, 45, 42, 21, 17, 12, 11};*/
 
@@ -50,4 +49,4 @@ public class BitonicPoint {
 
         }
     }
-}
+
