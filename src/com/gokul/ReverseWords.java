@@ -13,7 +13,9 @@ public class ReverseWords
         String s[] = "i.like.this.program.very.much".
                 split("\\.");
         String ans = "";
-        for (int i = s.length - 1; i >= 0; i--)
+            
+        
+        for (int i = s.length - 1; i >= 0; i--)//condition to traverse s[] in reverse order
         {
             ans += s[i] + " ";
         }
